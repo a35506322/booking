@@ -1,11 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;200;300;400;500;600;700;800;900&family=Yeseva+One&display=swap");
+
 // BS 5 Required
 @import "bootstrap/scss/functions";
+
+$yellow-light: #fbff22 !default;
+$body-bg: #eae9e1 !default;
+$font-family-sans-serif:
+  // For Chinese text
+  "Noto Sans TC",
+  // For English text
+  "Yeseva One",
+  // Cross-platform generic font family (default user interface font)
+  system-ui,
+  // Safari for macOS and iOS (San Francisco)
+  -apple-system,
+  // Windows
+  "Segoe UI",
+  // Android
+  Roboto,
+  // older macOS and iOS
+  "Helvetica Neue",
+  // Linux
+  "Noto Sans",
+  "Liberation Sans",
+  // Basic web fallback
+  Arial,
+  // Sans serif fallback
+  sans-serif,
+  // Emoji fonts
+  "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/variables-dark";
+// Create your own map
+$custom-colors: (
+  "yellow-light": $yellow-light,
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
 @import "bootstrap/scss/maps";
 
 @mixin logo($background-image) {
   background-image: url($background-image);
+  background-size: contain;
+  background-position: center;
   background-repeat: no-repeat;
   display: block;
   text-indent: 101%;
@@ -44,6 +84,78 @@
 // Helpers
 @import "bootstrap/scss/helpers";
 
+// Utilities
+$utilities: map-merge(
+  $utilities,
+  (
+    "background-position": (
+      property: background-position,
+      class: bg-p,
+      values: center,
+    ),
+    "background-repeat": (
+      property: background-repeat,
+      class: bg-rp,
+      values: no-repeat,
+    ),
+    "background-size": (
+      property: background-size,
+      class: bg-s,
+      values: cover,
+    ),
+    "rounded-top": (
+      property: border-top-left-radius border-top-right-radius,
+      class: rounded-top,
+      values: (
+        null: var(--#{$prefix}border-radius),
+        0: 0,
+        1: var(--#{$prefix}border-radius-sm),
+        2: var(--#{$prefix}border-radius),
+        3: var(--#{$prefix}border-radius-lg),
+        4: var(--#{$prefix}border-radius-xl),
+        5: var(--#{$prefix}border-radius-xxl),
+        circle: 50%,
+        pill: var(--#{$prefix}border-radius-pill),
+        custom: 2px,
+      ),
+    ),
+    "rounded-end": (
+      property: border-bottom-left-radius border-bottom-right-radius,
+      class: rounded-end,
+      values: (
+        null: var(--#{$prefix}border-radius),
+        0: 0,
+        1: var(--#{$prefix}border-radius-sm),
+        2: var(--#{$prefix}border-radius),
+        3: var(--#{$prefix}border-radius-lg),
+        4: var(--#{$prefix}border-radius-xl),
+        5: var(--#{$prefix}border-radius-xxl),
+        circle: 50%,
+        pill: var(--#{$prefix}border-radius-pill),
+        custom: 2px,
+      ),
+    ),
+    "width": (
+      property: width,
+      class: w,
+      values: (
+        25: 25%,
+        50: 50%,
+        75: 75%,
+        95: 95%,
+        100: 100%,
+        auto: auto,
+      ),
+    ),
+    "cursor": (
+      property: cursor,
+      class: cursor,
+      responsive: true,
+      values: auto pointer grab,
+    ),
+  )
+);
+
 @import "bootstrap/scss/utilities/api";
 
 // icon
@@ -53,3 +165,26 @@
 @import "./layout/footer.scss";
 
 @import "./pages/index.scss";
+
+.logo-img {
+  @include logo(
+    "https://github.com/hexschool/2022-web-layout-training/blob/main/2023week6/logo.png?raw=true"
+  );
+}
+
+.reset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+.chinese {
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+.english {
+  font-family: "Yeseva One", cursive;
+}
