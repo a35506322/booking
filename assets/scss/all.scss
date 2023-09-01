@@ -161,11 +161,6 @@ $utilities: map-merge(
 // icon
 @import "bootstrap-icons/font/bootstrap-icons.css";
 
-@import "./layout/header.scss";
-@import "./layout/footer.scss";
-
-@import "./pages/index.scss";
-
 .logo-img {
   @include logo(
     "https://github.com/hexschool/2022-web-layout-training/blob/main/2023week6/logo.png?raw=true"
