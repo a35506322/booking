@@ -31,6 +31,16 @@ $font-family-sans-serif:
   "Apple Color Emoji",
   "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+);
+
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/variables-dark";
 // Create your own map

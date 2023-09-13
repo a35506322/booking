@@ -1,0 +1,40 @@
+<div class="row gx-5 gy-5 justify-content-between">
+  <% const menuItemContent =
+  ['社群活動','演出','聯誼','遊戲競賽','社群活動','展覽']; for(let i= 0; i < 6;
+  i++ ) { %>
+  <div class="col-4">
+    <div class="d-flex flex-column flex-shrink-0">
+      <p
+        class="english fs-1 reset text-black pb-1 border-bottom border-3 border-black"
+      >
+        19 MAY 2023
+      </p>
+      <div
+        style="
+          background-image: url('https://github.com/hexschool/2022-web-layout-training/blob/main/2023week6/event/0<%= i+=1 %>.jpg?raw=true');
+          height: 255px;
+        "
+        class="bg-s-cover bg-p-center bg-rp-no-repeat my-2"
+      ></div>
+      <h4 class="text-black">邪典電影派對——房間</h4>
+      <p class="text-black fs-6">
+        你有聽說過「大災難家」裡面的主角 Tommy Wiseau
+        製作的「史上最爛的電影」——房間嗎？在美國甚至演變成一種邪教、一種派對的形式，在電影播放的對著螢幕丟湯匙都...
+      </p>
+      <div class="border-top border-bottom border-3 border-black py-2">
+        <div class="d-flex justify-content-between">
+          <div>
+            <img
+              style="width: 24px; height: auto"
+              src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023week6/sparkler.png?raw=true"
+              alt=""
+            />
+            <span class="fs-6 fw-semibold"><%= menuItemContent[--i] %></span>
+          </div>
+          <span class="fs-6 fw-semibold">開賣中</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% } %>
+</div>

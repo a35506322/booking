@@ -8,6 +8,75 @@
   </head>
   <body>
     <%- include('./layout/header'); -%>
+    <div class="container-lg py-5">
+      <!--上方導覽 start-->
+      <div
+        style="
+          background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/2023week6/event/13.jpg?raw=true);
+          width: 1296px;
+          height: 518px;
+        "
+        class="bg-s-cover bg-p-center bg-rp-no-repeat mb-5"
+      >
+        <div
+          class="px-5 pt-5 pb-3 h-100 d-flex flex-column justify-content-between"
+        >
+          <p class="english fw-normal text-white" style="font-size: 60px">
+            19 MAY 2023
+          </p>
+          <div>
+            <p class="fw-semibold text-white fs-4 text-center">
+              隔牆有耳-沒有草東的派對
+            </p>
+            <p class="fw-normal text-white fs-6 text-center">
+              你各位聽團仔們！每次想跟朋友一起聽草東專場卻每一次都搶不到票？「草東沒有派對」永遠都是「草東沒有門票」！<br />
+              帶上啤酒、野餐墊，讓我們在Live
+              House外面一起開場「沒有草東的派對」吧！
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--上方導覽 end-->
+      <!--上方導覽選單 start-->
+      <%- include('./components/index/menuItem'); -%>
+      <!--上方導覽選單 end-->
+      <!-- 近期活動 start-->
+      <div
+        class="border border-black border-3 py-3 px-4 d-flex justify-content-between align-items-center mb-5"
+      >
+        <span style="font-size: 64px" class="english font-normal text-black"
+          >RECENT</span
+        >
+        <span class="font-normal fs-2 text-black">近期活動</span>
+      </div>
+      <%- include('./components/index/recentActivities'); -%>
+      <!-- 近期活動 end-->
+      <!--線上活動 start-->
+      <div
+        class="border border-black border-3 py-3 px-4 d-flex justify-content-between align-items-center mb-4 mt-5"
+      >
+        <span style="font-size: 64px" class="english font-normal text-black"
+          >RECENT</span
+        >
+        <span class="font-normal fs-2 text-black">線上活動</span>
+      </div>
+      <div class="row">
+        <div class="col-7">
+          <div
+            class="bg-p-center bg-rp-no-repeat bg-s-cover"
+            style="
+              background-image: url('https://github.com/hexschool/2022-web-layout-training/blob/main/2023week6/event/online.jpg?raw=true');
+              width: 746px;
+              height: 317px;
+            "
+          ></div>
+        </div>
+        <div class="col-5">
+          <h2 class="fw-bolder text-black">切特居批踢</h2>
+        </div>
+      </div>
+      <!--線上活動 end-->
+    </div>
 
     <script type="module" src="../main.js"></script>
   </body>
